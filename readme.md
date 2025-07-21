@@ -1,3 +1,4 @@
+
 # Receipt - Analyzer (Search & Visualization Interface)
 
 ## Table of contents
@@ -179,6 +180,10 @@
   - `db.py` → SQLAlchemy DB models and queries
   - `app.py` → FastAPI routes and API endpoints
   - `frontend` → ReactJS dashboard and upload UI
+
+## Demo
+
+[Watch Demo Video](https://drive.google.com/file/d/17ClpLxdtNyoYspBf9FMkDHKNVPI8UNxD/view?usp=drive_link)
 
 
 ## Author
