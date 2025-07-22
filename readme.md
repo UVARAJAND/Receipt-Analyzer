@@ -28,23 +28,23 @@
 
 ---
 
-## 🔵 2. Backend (FastAPI)
+## 2. Backend (FastAPI)
 
-### 🔹 Routes
+### Routes
 
 - `POST /upload`: Accepts file uploads, processes OCR + LLM extraction, and stores the data in SQLite.
-- `GET /search`: Returns paginated and filtered results.
-- `GET /stats`: Sends statistical summaries (e.g., total spent per category).
+- `GET /filter_documents`: Returns paginated and filtered results.
+- `GET /documents`: Sends all the documents
 - `GET /download`: Exports data as CSV/JSON.
 
-### 🔹 Middleware & Validation
+### Middleware & Validation
 
 - File size/type validation.
 - Response and request data validated using **Pydantic**.
 
 ---
 
-## 🔵 3. Extraction Module (`extraction.py`)
+## 3. Extraction Module (`extraction.py`)
 
 - Uses **EasyOCR** and **PyPDF2** to extract text from image/PDF files.
 - Sends extracted text to **LangChain** + **Groq’s LLaMA3** using a structured prompt.
@@ -53,13 +53,13 @@
 
 ---
 
-## 🔵 4. Database Module (`db.py`)
+## 4. Database Module (`db.py`)
 
 - Built using **SQLAlchemy ORM**
 - Contains:
   - `insert()` – Insert extracted data
-  - `search()` – Search records
-  - `filter()` – Apply filters
+  - `get_document_by_id()` – Search records
+  - `filter_documents()` – Apply filters
 - Auto-creates tables and handles data persistence
   ---
 
@@ -81,6 +81,17 @@
 
 ### Prerequirements
   - `python3.11`
+  - `Poppler Setup (for PDF to Image conversion)`
+### Poppler Setup for windows
+
+1. Download and Extract
+    - Download Poppler ZIP from Google Drive
+    - Extract it to a location like: `C:\poppler`
+2. Add Poppler to System PATH
+    - Search for Environment Variables in Windows.
+    - Edit the Path system variable.
+    - Add: `C:\poppler\bin`
+3. Click OK and close all dialogs.
 
 ### Installation steps
  1. Clone the repository
@@ -122,7 +133,7 @@
 
 ## 🌟 Features
 
-### ✅ Intelligent Receipt Analysis
+### Receipt Analysis
 - Supports `.pdf`, `.jpg`, `.png`, and `.txt` files.
 - Uses **EasyOCR** and **PyPDF2** for accurate text extraction.
 - Extracts key fields like:
@@ -138,7 +149,7 @@
 ---
 
 ### Fast & Filterable Search
-- **Search bar** to quickly locate receipts by text content.
+- **Search** to quickly locate receipts by text content.
 - **Dynamic filters**:
   - By **vendor**
   - By **category**
@@ -169,7 +180,7 @@
 ---
 
 ### Export & Download
-- Easily export all data as **CSV** or **JSON**.
+- Easily export all data as **CSV**, **JSON** and **excel**.
 - Useful for accounting, tax filing, or offline analysis.
 
 ---
