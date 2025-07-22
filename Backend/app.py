@@ -26,9 +26,9 @@ from db import (
     filter_documents
 )
 from sqlalchemy.orm import Session
-import pytesseract
+# import pytesseract
 
-pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+# pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 UPLOAD_FOLDER = "Saved_data"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
