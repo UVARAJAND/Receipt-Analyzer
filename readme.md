@@ -19,7 +19,7 @@
 
 
 ## Detailed Explanation of the Implementation
-## 🔵 1. Frontend (ReactJS)
+## 1. Frontend (ReactJS)
 
 - **Upload Interface**: Upload `.pdf`, `.jpg`, `.png`, or `.txt` files.
 - **Dynamic Filters**: Vendor/category/date filters.
